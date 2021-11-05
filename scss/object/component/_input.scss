@@ -1,0 +1,25 @@
+@use "../../foundation/variable" as v;
+
+.c-input {
+	position: absolute;
+	display: none;
+	font-size: 1rem;
+	color: #111;
+	background: transparent;
+	box-sizing: border-box;
+	top: 5px;
+	left: 20px;
+	border: none;
+	border-bottom: 2px solid v.$addition-color;
+	z-index: 1;
+	transition: width 0.2s ease;
+
+	&:focus {
+		outline: none;
+		width: 100%;
+	}
+
+	&.show {
+		display: block;
+	}
+}

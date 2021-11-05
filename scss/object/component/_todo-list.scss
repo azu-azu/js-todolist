@@ -1,0 +1,23 @@
+.c-todo-list {
+	margin-top: 16px;
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:hover .c-actions {
+		display: block;
+
+		span {
+			opacity: 1;
+			transform: translateX(0);
+			transition: all 0.2s ease;
+		}
+	}
+}
+
+#complete-ul {
+	.c-todo-list {
+		justify-content: flex-start;
+	}
+}
