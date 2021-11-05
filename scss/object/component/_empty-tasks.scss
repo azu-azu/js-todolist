@@ -1,0 +1,25 @@
+@use "../../foundation/variable" as v;
+
+.c-empty-tasks {
+	color: v.$addition-color;
+	position: relative;
+	margin-top: 20px;
+	margin-left: 52px;
+
+	&::before {
+		position: absolute;
+		content: "";
+		display: inline-block;
+		width: 13px;
+		height: 13px;
+		border-radius: 2px;
+		// border: 2px solid v.$addition-color;
+		background: v.$addition-color;
+		top: 5px;
+		left: -20px;
+	}
+}
+
+.hidden {
+	display: none;
+}

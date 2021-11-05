@@ -1,0 +1,9 @@
+@use "../../foundation/variable" as v;
+
+.p-todo-wrap {
+	min-width: v.$area-width;
+
+	ul {
+		padding-left: 30px;
+	}
+}

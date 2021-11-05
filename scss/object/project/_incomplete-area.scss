@@ -1,0 +1,11 @@
+@use "../../foundation/variable" as v;
+@use "../../foundation/mixin" as m;
+
+.p-incomplete-area {
+	min-height: v.$area-min-height;
+	padding: v.$area-padding;
+	margin: v.$area-margin;
+	border-radius: v.$area-radius;
+	background: v.$incomplete-area-color;
+	@include m.my-border;
+}
