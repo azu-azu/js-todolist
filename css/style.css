@@ -83,6 +83,9 @@ body {
       -ms-flex-order: 3;
           order: 3;
   margin-left: 30px;
+  -webkit-column-gap: 24px;
+     -moz-column-gap: 24px;
+          column-gap: 24px;
 }
 .c-actions span {
   vertical-align: middle;
@@ -94,8 +97,8 @@ body {
   -webkit-transform: translateX(100px);
           transform: translateX(100px);
 }
-.c-actions span:not(:last-child) {
-  margin-right: 16px;
+.c-actions span.fa-pencil {
+  margin-left: 1px;
 }
 .c-actions span.fa-pencil:hover {
   color: #3915da;
@@ -296,7 +299,7 @@ button:hover {
   margin: 8px;
   padding-left: 20px;
   border-radius: 10px;
-  background: rgba(255, 192, 203, 0.5);
+  background: rgba(233, 112, 233, 0.5);
   -webkit-box-shadow: 0 25px 45px rgba(255, 0, 0, 0.1);
           box-shadow: 0 25px 45px rgba(255, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -329,7 +332,7 @@ button:hover {
   padding: 20px;
   margin: 8px;
   border-radius: 10px;
-  background: rgba(255, 192, 203, 0.5);
+  background: rgba(233, 112, 233, 0.5);
   -webkit-box-shadow: 0 25px 45px rgba(255, 0, 0, 0.1);
           box-shadow: 0 25px 45px rgba(255, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.5);

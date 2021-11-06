@@ -67,9 +67,6 @@ const myList = (text) => {
     document.getElementById("incomplete-ul").appendChild(newTodo);
     toggleEmptyListMessage();
 
-    document.getElementById("js-add-input").value = '';//インプット初期化
-
-
 
     // ------------------------
     // labelをクリックしたとき
@@ -139,16 +136,25 @@ const myList = (text) => {
     // ------------------------
     // pencilボタンをクリックしたとき
     // ------------------------
-    editSpan.addEventListener("click", () => {
+    editSpan.addEventListener('click', (e) => {
         editTodo(editSpan);
     });
 
     // 編集後、Enterを押したとき
-    editSpan.parentElement.previousElementSibling.children[2].onkeyup = function (e) {
+    const hideInput = editSpan.parentElement.previousElementSibling.children[2].firstElementChild//c-input
+
+    // これだと漢字変換で実行されちゃう
+    hideInput.onkeyup = function (e) {
         if (e.key === "Enter") {
             endEditingTodo(editSpan);
         }
     };
+
+    // フォーカスがはずれたとき
+    hideInput.addEventListener('focusout', () => {
+        endEditingTodo(editSpan);
+    });
+
 
     // ------------------------
     // 削除ボタンをクリックしたとき
@@ -162,8 +168,8 @@ const myList = (text) => {
 
 
 //onClickAddの実行
-document.getElementById("js-add-button").addEventListener('click', () => {
-    // e.preventDefault();
+document.getElementById("js-add-button").addEventListener('click', (e) => {
+    e.preventDefault();
     onClickAdd();
 });
 
@@ -171,12 +177,12 @@ document.getElementById("js-add-button").addEventListener('click', () => {
 function editTodo(e) {
     // previousElementSibling:前の要素
     if(e.classList.contains('fa-pencil')) {
-        const textInput = e.parentElement.previousElementSibling.children[2];// input
+        const textInput = e.parentElement.previousElementSibling.children[2].firstElementChild;// input
         const textSpan = e.parentElement.previousElementSibling.children[1];// span
         const content = textSpan.innerText;
 
         textInput.classList.add('show');
-        textSpan.classList.add('hide');
+        textSpan.classList.add('hide');  
         textInput.value = content;
         textInput.select();
     }
@@ -185,7 +191,7 @@ function editTodo(e) {
 // End editing Todo
 function endEditingTodo(e) {
     if(e.classList.contains('fa-pencil')) {
-        const textInput = e.parentElement.previousElementSibling.children[2];// input
+        const textInput = e.parentElement.previousElementSibling.children[2].firstElementChild;// input
         const textSpan = e.parentElement.previousElementSibling.children[1];// span
         const content = textInput.value;// inputの値を取得
         textInput.classList.remove('show');
