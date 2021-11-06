@@ -34,11 +34,11 @@
     <main class="l-main">
       <article class="p-todo-wrap" id="js-todo">
         <h1>JavaScriptでTODOリスト</h1>
-        <div class="p-input-area">
+        <form class="p-input-area">
           <p>TODO入力</p>
           <input id="js-add-input" type="text" placeholder="">
           <button class="add-form-button" id="js-add-button" type="submit">追加</button>
-        </div>
+        </form>
 
         <section class="p-incomplete-area" id="current-tasks">
           <h2 class="c-todo-title">未完了リスト</h2>
@@ -58,9 +58,11 @@
         <label class="c-item-name">
           <input type="checkbox" class="c-checkbox">
           <span class="c-todo-text"></span>
-          <input type="text" class="c-input">
+          <form action="">
+            <input type="text" class="c-input">
+          </form>
         </label>
-        <div class="c-actions">
+        <div class="c-actions" style="display: flex;">
           <span class="fa fa-dot-circle-o priority-btn"></span>
           <span class="fa fa-pencil"></span>
           <span class="fa fa-trash"></span>
