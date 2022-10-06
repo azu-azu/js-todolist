@@ -5,8 +5,9 @@ body {
 	background-repeat: no-repeat;
 	font-size: 1rem;
 
-	background: linear-gradient(to bottom, #3d88af, rgba(108, 177, 211, 0.5));
+	background: #3d88af;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	overflow: hidden; // 背景の星が100%超えるため
 }
