@@ -1,0 +1,38 @@
+.c-checkbox {
+	position: relative;
+	order: 1;
+
+	&::before {
+		position: absolute;
+		content: "";
+		display: block;
+		width: 20px;
+		height: 20px;
+		margin-right: 5px;
+		visibility: hidden;
+		border-radius: 50%;
+		border: 2px solid #fff;
+		top: -4px;
+		left: -30px;
+	}
+}
+
+.checked {
+	.c-checkbox::before {
+		display: none;
+	}
+}
+
+.p-complete-area {
+	.c-checkbox::before {
+		visibility: hidden;
+	}
+}
+
+.js-checkbox {
+	display: none;
+}
+
+.hide {
+	display: none;
+}

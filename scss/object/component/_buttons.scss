@@ -1,0 +1,26 @@
+@use "../../foundation/variable" as v;
+
+.c-buttons {
+	display: flex;
+	column-gap: 10px;
+	order: 3;
+
+	button {
+		font-size: 10px;
+		width: 30.01px;
+		height: 30px;
+		border-radius: v.$area-radius;
+		background: #999;
+		padding: 0;
+	}
+}
+
+button {
+	border-radius: v.$area-radius;
+	background: #fff;
+	padding: 4px 16px;
+
+	&:hover {
+		background: red;
+	}
+}

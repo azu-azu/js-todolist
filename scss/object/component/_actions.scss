@@ -1,0 +1,31 @@
+@use "../../foundation/variable" as v;
+
+.c-actions {
+  overflow: hidden;
+  order: 3;
+  margin-left: 30px;
+  column-gap: 24px;
+
+  span {
+    vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+    color: #222;
+    font-size: 1.5rem;
+
+    opacity: 0;
+    transform: translateX(100px);
+
+    &.fa-pencil {
+      margin-left: 1px;
+
+      &:hover {
+        color: v.$addition-color;
+      }
+    }
+
+    &.fa-trash:hover {
+      color: #fe4444;
+    }
+  }
+}

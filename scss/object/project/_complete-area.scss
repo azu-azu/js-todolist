@@ -1,0 +1,10 @@
+@use "../../foundation/variable" as v;
+@use "../../foundation/mixin" as m;
+
+.p-complete-area {
+	padding: v.$area-padding;
+	margin: v.$area-margin;
+	border-radius: v.$area-radius;
+	background: v.$complete-area-color;
+	@include m.my-border;
+}
