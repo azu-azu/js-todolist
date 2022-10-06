@@ -68,9 +68,7 @@ const myList = (text) => {
     toggleEmptyListMessage();
 
 
-    // ------------------------
     // labelをクリックしたとき
-    // ------------------------
     label.addEventListener("click", () => {
         const parentLi = label.parentNode;// labelの親タグli
         toCompleteList(parentLi);// 未完了リストから削除
@@ -94,21 +92,17 @@ const myList = (text) => {
         newTodo.appendChild(newButtons);// buttonsを追加
         document.getElementById("complete-ul").appendChild(newTodo);//#complete-listの直下に生成
 
-        // ------------------------
         // 削除ボタンをクリックしたとき
-        // ------------------------
         delButton.addEventListener("click", () => {
             const deleteTarget = delButton.parentNode.parentNode;// 親ノード取得
             document.getElementById("complete-ul").removeChild(deleteTarget);//削除
         });
 
-        // ------------------------
         // 戻すボタンをクリックしたとき
-        // ------------------------
         backButton.addEventListener("click", () => {
             const deleteTarget = backButton.parentNode.parentNode;// 親ノード取得
             document.getElementById("complete-ul").removeChild(deleteTarget);//削除
-            
+
             // TODOのテキスト取得・生成
             const backText = deleteTarget.firstElementChild.children[1].innerText;
             myList(backText);
@@ -116,9 +110,7 @@ const myList = (text) => {
     });
 
 
-    // ------------------------
     // 優先ボタンをクリックしたとき
-    // ------------------------
     prioritySpan.addEventListener("click", () => {
         const parentLi = prioritySpan.parentElement.parentElement;
         if(parentLi.classList.contains('c-priority--higher')){
@@ -133,9 +125,7 @@ const myList = (text) => {
         }
     });
 
-    // ------------------------
     // pencilボタンをクリックしたとき
-    // ------------------------
     editSpan.addEventListener('click', (e) => {
         editTodo(editSpan);
     });
@@ -156,9 +146,7 @@ const myList = (text) => {
     });
 
 
-    // ------------------------
     // 削除ボタンをクリックしたとき
-    // ------------------------
     deleteSpan.addEventListener("click", () => {
         // 押された削除ボタンの親タグ(li)を未完了リストから削除
         deleteFromIncompleteList(deleteSpan.parentNode.parentNode);
@@ -182,7 +170,7 @@ function editTodo(e) {
         const content = textSpan.innerText;
 
         textInput.classList.add('show');
-        textSpan.classList.add('hide');  
+        textSpan.classList.add('hide');
         textInput.value = content;
         textInput.select();
     }
