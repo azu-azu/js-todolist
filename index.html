@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+
+    <!-- スリックCSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"> -->
+
+    <!-- 自作CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- グーグルフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500&display=swap"
+      rel="stylesheet">
+
+    <!-- フォントオーサム -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  </head>
+
+  <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->
+
+  <body class="">
+    <main class="l-main">
+      <article class="p-todo-wrap" id="js-todo">
+        <h1>JavaScriptでTODOリスト</h1>
+        <form class="p-input-area">
+          <p>TODO入力</p>
+          <input id="js-add-input" type="text" placeholder="">
+          <button class="add-form-button" id="js-add-button" type="submit">追加</button>
+        </form>
+
+        <section class="p-incomplete-area" id="current-tasks">
+          <h2 class="c-todo-title">未完了リスト</h2>
+          <p class="c-empty-tasks">ここにリストが追加されます</p>
+          <ul id="incomplete-ul"></ul>
+        </section>
+
+        <section class="p-complete-area">
+          <h2 class="todo-title">完了済</h2>
+          <ul id="complete-ul"></ul>
+        </section>
+      </article>
+    </main>
+
+    <template id="js-list-template">
+      <li class="c-todo-list">
+        <label class="c-item-name">
+          <input type="checkbox" class="c-checkbox">
+          <span class="c-todo-text"></span>
+          <form action="">
+            <input type="text" class="c-input">
+          </form>
+        </label>
+        <div class="c-actions" style="display: flex;">
+          <span class="fa fa-dot-circle-o priority-btn"></span>
+          <span class="fa fa-pencil"></span>
+          <span class="fa fa-trash"></span>
+        </div>
+      </li>
+    </template>
+
+    <template id="js-button-template">
+      <div class="c-buttons">
+        <button>削除</button>
+        <button class="c-back-button">戻す</button>
+      </div>
+    </template>
+
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script
+      src="https://cdn.rawgit.com/egorshar/jquery-ui-sortable-animation/master/jquery.ui.sortable-animation.js"></script>
+    <script src="js/myStars.js"></script>
+    <script src="js/myTodoList.js"></script>
+  </body>
+
+</html>

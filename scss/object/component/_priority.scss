@@ -1,0 +1,37 @@
+$priority-higher-color: #fe4444;
+$priority-high-color: #fbaa0f;
+
+.priority-btn:hover {
+	color: $priority-high-color;
+}
+
+.c-priority {
+	.c-checkbox::before {
+		visibility: visible;
+	}
+
+	&--high {
+		.priority-btn {
+			color: $priority-high-color;
+		}
+
+		.c-checkbox::before {
+			background: $priority-high-color;
+		}
+	}
+
+	&--higher {
+		.priority-btn {
+			color: $priority-higher-color;
+		}
+
+		.c-checkbox::before {
+			background: $priority-higher-color;
+		}
+	}
+}
+
+.checked .fa-pencil,
+.checked .priority-btn {
+	display: none;
+}
