@@ -10,12 +10,10 @@ const toggleEmptyListMessage = function () {
     }
 };
 
-
 // inputに入力したらリストに追加
 const onClickAdd = () => {
     const inputText = document.getElementById("js-add-input").value;// inputの値を取得する
     document.getElementById("js-add-input").value = "";// inputの値を初期化する
-
     myList(inputText);
 };
 
@@ -41,8 +39,6 @@ const addCheckHandler = function (item) {
 for (let i = 0; i < lists.length; i++) {
     addCheckHandler(lists[i]);
 }
-
-
 
 // 追加ボタンをクリックしたとき
 const myList = (text) => {
@@ -133,9 +129,9 @@ const myList = (text) => {
     // 編集後、Enterを押したとき
     const hideInput = editSpan.parentElement.previousElementSibling.children[2].firstElementChild//c-input
 
-    // これだと漢字変換で実行されちゃう
+    // 漢字変換で実行
     hideInput.onkeyup = function (e) {
-        if (e.key === "Enter") {
+        if (e.key === 'Enter') {
             endEditingTodo(editSpan);
         }
     };
